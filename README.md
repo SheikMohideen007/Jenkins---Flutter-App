@@ -101,7 +101,8 @@ Lightweight checkout: ❌ Disabled
 
 Added a Jenkinsfile at the root of the GitHub repository.
 
-````pipeline {
+```
+pipeline {
     agent any
 
     environment {
@@ -150,8 +151,8 @@ Added a Jenkinsfile at the root of the GitHub repository.
             echo 'Pipeline failed'
         }
     }
-}```
-
+}
+```
 
 ✔ File name case-sensitive
 ✔ Placed at repo root
@@ -162,19 +163,17 @@ Webhook URL
 
 Used ngrok to expose local Jenkins:
 
-```ngrok http 8080```
-
+`ngrok http 8080`
 
 Generated URL example:
 
-```https://coercible-winford-yawnful.ngrok-free.dev```
+`https://coercible-winford-yawnful.ngrok-free.dev`
 
 Webhook Settings in GitHub
 
 Payload URL
 
-```https://coercible-winford-yawnful.ngrok-free.dev/github-webhook/```
-
+`https://coercible-winford-yawnful.ngrok-free.dev/github-webhook/`
 
 Content-Type: application/json
 
@@ -188,7 +187,6 @@ In Jenkins job configuration:
 
 ✔ GitHub hook trigger for GITScm polling
 
-
 ❌ Poll SCM disabled
 ❌ Remote trigger disabled
 
@@ -200,18 +198,14 @@ Logger Name
 
 org.jenkinsci.plugins.github.webhook
 
-
 Log Level
 
 ALL
 
-````
-
+```
 Observed Log Output (Confirmed)
 Received PushEvent from GitHub
 Considering to poke Todo List App
 Poked Todo List App
-
-```
 
 ```
