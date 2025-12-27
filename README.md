@@ -210,3 +210,61 @@ Received PushEvent from GitHub
 Considering to poke Todo List App
 Poked Todo List App
 ```
+
+# 8️⃣ Manual Build Validation
+
+Manual Build Now worked successfully
+
+Pipeline executed up to:
+
+Flutter test
+
+Flutter build APK
+
+Confirms Jenkinsfile and environment are correct
+
+# 🔍 Observed Issue
+
+Despite:
+
+Successful webhook delivery (GitHub → Jenkins)
+
+Correct job configuration
+
+Correct Jenkinsfile
+
+Successful manual builds
+
+➡️ No automatic build was triggered on git push
+
+# Root Cause (Technical Explanation)
+
+1. Jenkins received the webhook and poked the job
+
+2. However, in single Pipeline jobs, Jenkins:
+
+3. Uses SCM polling logic
+
+4. Will NOT schedule a new build if it detects no new revision difference
+
+5. Webhook nudges polling, but does not force a build
+
+This is expected Jenkins behavior, not a misconfiguration.
+
+# Recommended Best Practice (Industry Standard)
+
+👉 Use Multibranch Pipeline
+
+Why:
+
+1. Eliminates SCM polling ambiguity
+
+2. Every push to a branch = new build
+
+3. Native support for GitHub webhooks
+
+4. Industry-standard Jenkins architecture
+
+## Summary
+
+A Jenkins Pipeline with GitHub webhooks was successfully configured for a Flutter app; webhooks reached Jenkins correctly, but due to single-pipeline SCM polling behavior, automatic builds require a Multibranch Pipeline for guaranteed triggering.
