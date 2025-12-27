@@ -22,41 +22,41 @@ flutter build apk
 
 # Tools & Technologies Used
 
-Jenkins (Windows local installation)
+1. Jenkins (Windows local installation)
 
-GitHub (Source Code Repository)
+2. GitHub (Source Code Repository)
 
-ngrok (Expose local Jenkins to the internet)
+3. ngrok (Expose local Jenkins to the internet)
 
-Flutter SDK
+4. Flutter SDK
 
-GitHub Webhooks
+5. GitHub Webhooks
 
-Jenkinsfile (Pipeline as Code)
+6. Jenkinsfile (Pipeline as Code)
 
 ## Step-by-Step Implementation
 
 # 1️⃣ Jenkins Installation & Setup
 
-Installed Jenkins on Windows
+1. Installed Jenkins on Windows
 
 Jenkins accessible at:
 
 `http://localhost:8080`
 
-Initial admin setup completed
+2. Initial admin setup completed
 
-Required plugins installed:
+3. Required plugins installed:
 
-Git
+   1. Git
 
-GitHub
+   2. GitHub
 
-GitHub API
+   3. GitHub API
 
-Pipeline
+   4. Pipeline
 
-Blue Ocean (optional)
+   5. Blue Ocean (optional)
 
 # 2️⃣ Flutter Environment Verification
 
@@ -72,31 +72,27 @@ Verified Flutter setup using Jenkins workspace:
 
 Created a Jenkins job named:
 
-Todo List App
+1. Todo List App
 
-Job Type
-Pipeline
+2. Job Type
+   `Pipeline`
 
-Pipeline Definition
-Pipeline script from SCM
+3. Pipeline Definition
+   `Pipeline script from SCM`
 
-SCM Configuration
+4. SCM Configuration
+   `SCM: Git`
 
-SCM: Git
+5. Repository URL:
+   `https://github.com/SheikMohideen007/Jenkins---Flutter-App.git`
 
-Repository URL:
+6. Branches to build:
+   `*/main`
 
-`https://github.com/SheikMohideen007/Jenkins---Flutter-App.git`
+7. Script Path:
+   `Jenkinsfile`
 
-Branches to build:
-
-`*/main`
-
-Script Path:
-
-`Jenkinsfile`
-
-Lightweight checkout: ❌ Disabled
+8. Lightweight checkout: ❌ Disabled
 
 # 4️⃣ Jenkinsfile (Pipeline as Code)
 
@@ -161,7 +157,7 @@ pipeline {
 
 # 5️⃣ GitHub Webhook Configuration
 
-Webhook URL
+1. Webhook URL
 
 Used ngrok to expose local Jenkins:
 
@@ -171,7 +167,7 @@ Generated URL example:
 
 `https://coercible-winford-yawnful.ngrok-free.dev`
 
-Webhook Settings in GitHub
+2. Webhook Settings in GitHub
 
 Payload URL
 
@@ -194,15 +190,13 @@ In Jenkins job configuration:
 
 # 7️⃣ Webhook Verification (System Logs)
 
-Added a Jenkins System Log recorder:
+1. Added a Jenkins System Log recorder:
 
 Logger Name
-
-org.jenkinsci.plugins.github.webhook
+`org.jenkinsci.plugins.github.webhook`
 
 Log Level
-
-ALL
+`ALL`
 
 ```
 Observed Log Output (Confirmed)
@@ -217,9 +211,9 @@ Manual Build Now worked successfully
 
 Pipeline executed up to:
 
-Flutter test
+`Flutter test`
 
-Flutter build APK
+`Flutter build APK`
 
 Confirms Jenkinsfile and environment are correct
 
@@ -227,13 +221,13 @@ Confirms Jenkinsfile and environment are correct
 
 Despite:
 
-Successful webhook delivery (GitHub → Jenkins)
+1. Successful webhook delivery (GitHub → Jenkins)
 
-Correct job configuration
+2. Correct job configuration
 
-Correct Jenkinsfile
+3. Correct Jenkinsfile
 
-Successful manual builds
+4. Successful manual builds
 
 ➡️ No automatic build was triggered on git push
 
