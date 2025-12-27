@@ -133,7 +133,7 @@ class _AddTodoDialogState extends State<AddTodoDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('Add Todo..'),
+      title: const Text('Add Todo'),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
