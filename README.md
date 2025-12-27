@@ -1,6 +1,6 @@
 # Jenkins CI/CD Setup for Flutter App (GitHub + Webhooks)
 
-📌 Objective
+# Objective
 
 To set up a CI/CD pipeline using Jenkins for a Flutter application, such that:
 
@@ -20,7 +20,7 @@ flutter test
 flutter build apk
 ```
 
-🛠️ Tools & Technologies Used
+# Tools & Technologies Used
 
 Jenkins (Windows local installation)
 
@@ -34,8 +34,9 @@ GitHub Webhooks
 
 Jenkinsfile (Pipeline as Code)
 
-🧩 Step-by-Step Implementation
-1️⃣ Jenkins Installation & Setup
+## Step-by-Step Implementation
+
+# 1️⃣ Jenkins Installation & Setup
 
 Installed Jenkins on Windows
 
@@ -57,7 +58,7 @@ Pipeline
 
 Blue Ocean (optional)
 
-2️⃣ Flutter Environment Verification
+# 2️⃣ Flutter Environment Verification
 
 Verified Flutter setup using Jenkins workspace:
 
@@ -67,7 +68,7 @@ Verified Flutter setup using Jenkins workspace:
 ✔ Android SDK available
 ✔ Tests and builds run successfully via manual Jenkins build
 
-3️⃣ Creating the Jenkins Pipeline Job
+# 3️⃣ Creating the Jenkins Pipeline Job
 
 Created a Jenkins job named:
 
@@ -97,7 +98,7 @@ Script Path:
 
 Lightweight checkout: ❌ Disabled
 
-4️⃣ Jenkinsfile (Pipeline as Code)
+# 4️⃣ Jenkinsfile (Pipeline as Code)
 
 Added a Jenkinsfile at the root of the GitHub repository.
 
@@ -158,7 +159,8 @@ pipeline {
 ✔ Placed at repo root
 ✔ Committed and pushed to main
 
-5️⃣ GitHub Webhook Configuration
+# 5️⃣ GitHub Webhook Configuration
+
 Webhook URL
 
 Used ngrok to expose local Jenkins:
@@ -181,7 +183,7 @@ Events: Just the push event
 
 Active: ✅ Enabled
 
-6️⃣ Jenkins Build Trigger Configuration
+# 6️⃣ Jenkins Build Trigger Configuration
 
 In Jenkins job configuration:
 
@@ -190,7 +192,7 @@ In Jenkins job configuration:
 ❌ Poll SCM disabled
 ❌ Remote trigger disabled
 
-7️⃣ Webhook Verification (System Logs)
+# 7️⃣ Webhook Verification (System Logs)
 
 Added a Jenkins System Log recorder:
 
@@ -207,5 +209,4 @@ Observed Log Output (Confirmed)
 Received PushEvent from GitHub
 Considering to poke Todo List App
 Poked Todo List App
-
 ```
