@@ -38,7 +38,7 @@ flutter build apk
 
 # 1️⃣ Jenkins Installation & Setup
 
-1. Installed Jenkins on Windows
+1.  Installed Jenkins on Windows
 
 Jenkins accessible at:
 
